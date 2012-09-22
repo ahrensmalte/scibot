@@ -25,7 +25,7 @@ class Histogram():
         #start the driving / localization
         self.drive()
 
-    def convert_image_to_map(self, ones = True, fp = 'C:/Users/116927/SkyDrive/School/Robotics/Code/hallway.png'):
+    def convert_image_to_map(self, ones = True, fp = 'hallway.png'):
         """converts the specified image into a map (matrix) via pixel values"""
 
         #load the image with PIL (Python Imaging Library - http://www.pythonware.com/products/pil/)
