@@ -1,4 +1,4 @@
-"""AutoBot.py: The start-up file, where everything branches out from."""
+"""scibot.py: The start-up file, where everything branches out from."""
 __author__ = "Malte Ahrens"
 __license__ = "Attribution 3.0 Unported (CC BY 3.0)"
 
