@@ -21,7 +21,11 @@ if __name__ == '__main__':
     lidar = LIDAR(23, lidar_results)
     lidar.start()
 
+    #TODO: see if we need to wait here until the lidar has fully initialized
+
     #start the robot service (movement, localization, etc.)
+    #for debugging, use histogram_filter = Histogram(0,0,0) and comment out all the initialization lines of robot, gyro, and lidar
+    #and be sure to do some (un)commenting in filters.py, in the drive() function
     histogram_filter = Histogram(robot, gyro, lidar_results)
 
     #don't hide my cmd window!

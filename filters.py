@@ -167,9 +167,15 @@ class Histogram():
     def drive(self):
         """starts the process of sense (update probabilities) -> move (real robot) -> move (update probabilities), repeat"""
 
-        #limit the loop to just 5 times...makes catching an escaping robot easier...
+        #fake sensor data for debugging
+        fake_sensor = [[1, 0, 1], [1, 1, 0], [1, 0, 1], [1, 0, 1], [1, 0, 1], [1, 0, 1], [1, 1, 0], [0, 1, 1], [1, 1, 1], [1, 1, 0]]
+
+        #limit the loop to just 10 times...makes catching an escaping robot easier...
         for x in range(10): 
-            print(time())
+            #uncomment to use the fake sensor data (useful for debugging)
+            #comment out the sensor_sees = self.lid... and self.move_robot(... lines as well
+            #sensor_sees = fake_sensor[x]
+
             #get the latest results from the lidar
             sensor_sees = self.lidar_results[:]
 
