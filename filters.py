@@ -1,4 +1,4 @@
-"""filters.py: A collection of filters (only one so far) for localizing the robot"""
+"""filters.py: a collection of filters (only one at the moment, though) for localizing the robot"""
 __author__ = "Malte Ahrens"
 __license__ = "Attribution 3.0 Unported (CC BY 3.0)"
 
@@ -163,18 +163,19 @@ class Histogram():
 
     p = [] #probability map of where we think we are
     map = [] #map of surroundings (1 => wall, 0 => movable terrain)
+    from time import time
     def drive(self):
         """starts the process of sense (update probabilities) -> move (real robot) -> move (update probabilities), repeat"""
 
         #limit the loop to just 5 times...makes catching an escaping robot easier...
         for x in range(10): 
-
+            print(time())
             #get the latest results from the lidar
             sensor_sees = self.lidar_results[:]
 
             #update the probabilities (sense)
             self.p = self.sense(sensor_sees)
-            
+
             #debug stuff
             print('sensor reading: ' + str(sensor_sees))
             self.show(self.normalize(self.p))
@@ -187,10 +188,10 @@ class Histogram():
 
             #update the probabilities (move)
             self.p = self.move(move_command)
-                    
+
             #normalize the probability array
             self.p = self.normalize(self.p)
-            
+
             #more debug stuff
             print('\nmove command: ' + str(move_command))
             self.show(self.p)

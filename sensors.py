@@ -1,4 +1,4 @@
-"""sensors.py: Handles communications between computer & external sensors"""
+"""sensors.py: handles communications between the computer and the external sensors"""
 __author__ = "Malte Ahrens"
 __license__ = "Attribution 3.0 Unported (CC BY 3.0)"
 
