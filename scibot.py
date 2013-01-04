@@ -15,7 +15,7 @@ if __name__ == '__main__':
     #initialize the gyroscope (calibrate it)
     gyro = Gyroscope(robot)
 
-    #initialize the LIDAR (provide the SynchronizedArray from multiprocessing to facilitate the sharing of memory)
+    #initialize the LIDAR to com port 23 (& provide the SynchronizedArray from multiprocessing to facilitate the sharing of memory)
     lidar_results = Array('i', 3)
     lidar = LIDAR(23, lidar_results)
     lidar.start()
