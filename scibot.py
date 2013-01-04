@@ -7,7 +7,6 @@ from time import sleep
 from create import *
 from sensors import LIDAR, Gyroscope
 from filters import Histogram
-from web import WebControl, Tweetr
 
 if __name__ == '__main__':
     #initialize COM connections with the robot (handled by the create library)
